@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 # puppet.py - sublimelint package for checking puppet files
-# Requires:
-# gem install puppet-lint
 
 import re
 
@@ -10,11 +8,8 @@ from base_linter import BaseLinter, INPUT_METHOD_TEMP_FILE
 CONFIG = {
     'language': 'Puppet',
     'executable': 'puppet',
-#   'executable': 'puppet-lint',
     'lint_args': ['parser', 'validate', '--color=false', '{filename}'],
-#   'lint_args': ['--no-80chars-check','{filename}'],
     'test_existence_args': '-V',
-#   'test_existence_args': '-v',
     'input_method': INPUT_METHOD_TEMP_FILE
 }
 
@@ -31,7 +26,10 @@ class Linter(BaseLinter):
             if match:
                 error, line = match.group('error'), match.group('line')
                 lineno = int(line)
-                near = match.group('near')
+                try:
+                    near = match.group('near')
+                except IndexError:
+                    near = ''
 
                 if near:
                     error = '{0}, near "{1}"'.format(error, near)
