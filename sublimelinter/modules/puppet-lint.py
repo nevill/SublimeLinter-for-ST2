@@ -5,14 +5,14 @@
 
 import re
 
-from base_linter import BaseLinter, INPUT_METHOD_TEMP_FILE
+from base_linter import BaseLinter, INPUT_METHOD_FILE
 
 CONFIG = {
     'language': 'puppet-lint',
     'executable': 'puppet-lint',
     'lint_args': ['--no-80chars-check', '{filename}'],
-     'test_existence_args': '--version',
-    'input_method': INPUT_METHOD_TEMP_FILE
+    'test_existence_args': '--version',
+    'input_method': INPUT_METHOD_FILE
 }
 
 
