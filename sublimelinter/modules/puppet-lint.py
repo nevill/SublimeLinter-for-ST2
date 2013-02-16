@@ -23,7 +23,7 @@ class Linter(BaseLinter):
             if not match:
                 match = re.match(r'[Ee]rr(or)?: (?P<error>.+?(Could not match (?P<near>.+?))?) at /.+?:(?P<line>\d+)?', line)
                 if not match:
-                    match = re.match(r'(ERROR|WARNING): (?P<error>.+?) on line (?P<line>\d+)?', line)
+                    match = re.match(r'(ERROR|WARNING): (?P<error>.+?) on line (?P<line>\d+)?$', line)
 
             if match:
                 error, line = match.group('error'), match.group('line')
