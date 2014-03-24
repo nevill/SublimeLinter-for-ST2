@@ -5,7 +5,7 @@ SublimeLinter
 
 SublimeLinter for Sublime Text 3 is [here](https://github.com/SublimeLinter/SublimeLinter3), and it’s soooooo much better than before! Install it from Package Control and enjoy!
 
-Unless someone else comes forward, SublimeLinter for Sublime Text 2 will no longer be supported. I strongly encourage everyone to upgrade to Sublime Text 3 and SublimeLinter 3 — you’ll be glad you did! Take a look at the [extensive documentation](https://github.com/SublimeLinter/SublimeLinter.github.io/wiki) to see the great new features in SublimeLinter 3.
+Unless someone else comes forward, SublimeLinter for Sublime Text 2 will no longer be supported. I strongly encourage everyone to upgrade to Sublime Text 3 and SublimeLinter 3 — you’ll be glad you did! Take a look at the [extensive documentation](http://sublimelinter.readthedocs.org/) to see the great new features in SublimeLinter 3.
 
 ## Share the love!
 
