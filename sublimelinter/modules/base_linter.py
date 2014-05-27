@@ -323,7 +323,7 @@ class BaseLinter(object):
            has to be dynamically calculated in the future.'''
         return self.JSC_PATH
 
-    def find_file(self, filename, view):
+    def find_file(self, filename, view, pathOnly = False):
         '''Find a file with the given name, starting in the view's directory,
            then ascending the file hierarchy up to root.'''
         path = (view.file_name() or '').encode('utf-8')
@@ -338,8 +338,11 @@ class BaseLinter(object):
             path = os.path.join(dirname, filename)
 
             if os.path.isfile(path):
-                with open(path, 'r') as f:
-                    return f.read()
+                if pathOnly:
+                    return path
+                else:
+                    with open(path, 'r') as f:
+                        return f.read()
 
             # if we hit root, quit
             parent = os.path.dirname(dirname)
