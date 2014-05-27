@@ -20,7 +20,10 @@ class Linter(BaseLinter):
 
     def get_lint_args(self, view, code, filename):
         path = self.find_file('.jshintrc', view, True)
-        return ['-c', path, filename]
+        if path is None:
+            return [filename]
+        else:
+            return ['-c', path, filename]
 
     def parse_errors(self, view, errors, lines, errorUnderlines, violationUnderlines, warningUnderlines, errorMessages, violationMessages, warningMessages):
         for line in errors.splitlines():
